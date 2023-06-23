@@ -1,0 +1,39 @@
+{% extends "network/layout.html" %} {% load static %} {% block body %}
+
+<div class="section-title">
+  <h1>All Posts</h1>
+</div>
+<div class="scrollable-container">
+  <div class="profile"></div>
+
+  <div class="add-post"></div>
+
+  <div class="posts">
+    <ul class="posts__list"></ul>
+  </div>
+
+  <div class="pagination"></div>
+</div>
+
+<div class="overlay hidden"></div>
+<div class="edit-post-window hidden">
+  <button class="btn--close-modal">&times;</button>
+  <form class="edit">
+    <div class="edit__data">
+      <h3 class="edit__heading">
+        It's never late to say what you wanted to say the way you wanted to say
+        it, please edit your post:
+      </h3>
+      <textarea
+        name="content"
+        class="edit__input form-control mb-3"
+        rows="2"
+      ></textarea>
+    </div>
+    <button class="btn btn-primary">Edit</button>
+  </form>
+</div>
+
+{% endblock %} {% block script %}
+<script type="module" src="{% static 'network/controller.js' %}"></script>
+{% endblock %}
